@@ -76,4 +76,5 @@ kubectl apply -f meureplicaset.yaml
 kubectl get replicaset
 kubectl delete pod meupodreplicaset
 kubectl delete replicaset meupodreplicaset
+kubectl describe pod meureplicaset-mx78n
 ````
