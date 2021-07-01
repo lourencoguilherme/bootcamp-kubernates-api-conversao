@@ -5,3 +5,5 @@ RUN npm install
 COPY . .
 EXPOSE 8080
 CMD ["node", "index.js"]
+
+!**/target/banco-nacional-0.0.1-SNAPSHOT.jar

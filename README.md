@@ -40,4 +40,40 @@ docker image build -t gu1lh3rm/ubuntu-curl:v1 .
 docker image ls
 docker push gu1lh3rm/ubuntu-curl:v1
 docker tag gu1lherm/ubuntu-curl:v1 guilherm/ubuntu-curl:latest
+docker container run -d -p 8080:8080 gu1lherm/ubuntu-curl:v1
+````
+
+###Instação Kubernates
+````
+k3d para gerenciar instancias no kubernates
+https://k3d.io/
+
+Kubernates cli
+https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+````
+
+###Gerenciamento de containers kubernates
+````
+k3d cluster create meuprimeirocluster -- cria cluster kubernates
+kubectl get nodes -- lista clusters kubernates
+k3d cluster list -- lista clusters kubernates
+k3d cluster delete id -- deleta cluster 
+k3d cluster create meucluster --servers 3 --agents 3 -- cria varios clusters
+````
+
+###Gerenciamento de clusters kubernates
+````
+kubectl api-resources
+depois de criar o arquivo yaml execute
+kubectl create -f .\meupod.yaml -- cria o pod
+kubectl get pods -- lista os pods
+kubectl describe pod meupod -- lista detalhes do pod
+kubectl port-forward pod/meupod 8080:80 -- executa o pod e expoe a porta
+kubectl get pods -l app=nginx -- lista um pod usando uma label
+
+replicaset
+kubectl apply -f meureplicaset.yaml
+kubectl get replicaset
+kubectl delete pod meupodreplicaset
+kubectl delete replicaset meupodreplicaset
 ````
